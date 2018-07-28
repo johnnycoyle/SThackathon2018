@@ -40,6 +40,7 @@
     "redux-logger": "^2.6.1",
     "redux-thunk": "^2.0.1",
     "sass-loader": "^6.0.5",
+    "semantic-ui-css": "^2.3.3",
     "semantic-ui-react": "^0.82.1",
     "tinycolor2": "^1.4.1",
     "url-loader": "^0.5.8"

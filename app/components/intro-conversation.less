@@ -1,0 +1,126 @@
+.intro-conversation-container {
+  position: absolute;
+  width: 65%;
+  left: 5%;
+  height: 100%;
+  margin: auto;
+  user-select: none;
+  z-index: 100;
+  overflow: visible;
+
+  h3 {
+    	color: #FFFFFF;	
+      font-family: "Nunito Sans";	
+      font-size: 32px;	
+      font-weight: 800;	
+  }
+}
+
+
+.slide {
+  z-index: 1000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: visible;
+}
+
+@delay: 2s;
+@text1duration: 5s;
+@outAnimationDuration: 500ms;
+@inAnimationDuration: 750ms;
+
+.text1:extend(.slide) {
+  opacity: 0;
+  animation: text-animation @text1duration ease-in-out;
+  animation-delay: @delay;
+  animation-fill-mode: forwards;
+}
+
+@keyframes text-animation {
+  0% {
+    opacity: 0;
+    transform: translateY(-5%);
+  }
+  15% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  85% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(7%);
+  }
+}
+
+.text2:extend(.slide) {
+  opacity: 0;
+  animation: text-animation @text1duration ease-in-out;
+  animation-delay: @delay + @text1duration;
+  animation-fill-mode: forwards;
+}
+
+.text3:extend(.slide) {
+  opacity: 0;
+  animation: text-animation @text1duration ease-in-out;
+  animation-delay: @delay + @text1duration + @text1duration;
+  animation-fill-mode: forwards;
+}
+
+.confirm-locations-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  opacity: 0;
+  animation: confirm-locations-animation 500ms ease-in-out;
+  animation-delay: 17s;
+  animation-fill-mode: forwards;
+  overflow: visible;
+
+  h3 {
+    	color: #FFFFFF;	
+      font-family: "Nunito Sans";	
+      font-size: 32px;	
+      font-weight: 800;	
+  }
+}
+
+@keyframes confirm-locations-animation {
+  from {
+    opacity: 0;
+    transform: translateX(-5%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+.looks-good-button{
+  position: absolute;
+  z-index: 1000;
+  top: 330px;
+	height: 48px;	
+  width: 120px;	
+  border-radius: 3px;	 
+  color: black;
+  background-color: #F5F5F5;
+  animation: looks-good-button-fade-in 500ms ease-in-out;
+  animation-delay: 17.5s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes looks-good-button-fade-in {
+  from {
+    opacity: 0;
+    transform: translateX(-5%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
