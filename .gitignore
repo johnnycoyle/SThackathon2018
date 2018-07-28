@@ -1,0 +1,10 @@
+.DS_Store
+*.log
+*bundle.js
+node_modules
+tmp.js
+npm
+colors.scssnpm
+*.png
+!tachometer.png
+*.psd
