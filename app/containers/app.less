@@ -1,10 +1,17 @@
 @import 'colors.less';
 
+html {
+  overflow: hidden;
+}
+
 body { 
   margin: 0;
   padding: 0;
   background: #2270EE;
-  min-width: 1000px; 
+  min-width: 1000px;
+  max-height: 100vh;
+  overflow: hidden;
+  transform: translateY(8%);
 }
 
 .main-container {
@@ -13,8 +20,8 @@ body {
   height: 100vh; 
   overflow: hidden;
   justify-content: center;
-  user-select: none;
   max-height: 100vh;
+  user-select: none;
 }
 
 .slider-frame {

@@ -1,10 +1,12 @@
 import React from 'react';
 import './upload-image.less';
 
-class UploadImage extends React.Component {
+export default class UploadImage extends React.Component {
   render() {
     return (
-      <button>hello</button>
+      <div className="upload-image-container">
+        <button>hello</button>
+      </div>
     );
   }
 }
