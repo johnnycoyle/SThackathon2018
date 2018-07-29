@@ -20,7 +20,7 @@ export default class EmployeeFormInput extends React.Component {
 
     for (let i = 0; i < count; i += 1) {
       inputFields.push(
-        <div>
+        <div className="employee-form-container">
           <label>{i + 1 + ". "}</label>
           <input 
               type="text" 
@@ -48,8 +48,10 @@ export default class EmployeeFormInput extends React.Component {
 
   render() {
     return (
-      <div className="employee-input-container">
-          { this.renderForms(6) }
+      <div> 
+        <div className="employee-input-container">
+            { this.renderForms(6) }
+        </div>
       </div>
     );
   }

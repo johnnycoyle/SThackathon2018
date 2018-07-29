@@ -1,0 +1,64 @@
+.trade-selector-item-container {
+  display: inline-block;
+  text-align: center;
+  margin-left: 30px;
+
+  h2 {
+    margin-right: 20px;
+    transform: scale(1);
+    color: white;
+    transition: all ease-in-out 150ms;
+  }
+
+  .trade-selector-item {
+      height: 194px;	width: 194px;	border-radius: 4px;	background-color: #FFFFFF;
+      display: inline-block;
+      margin-right: 10px;
+      transform: scale(1);
+      box-shadow: none;
+      transition: all ease-in-out 150ms;
+
+      img {
+        height: 100%;
+      }
+      .trade-selector-corner-check-mark {
+        width: 50px;
+        height: 50px;
+        background: #4F3A9E;
+        position: absolute;
+        z-index: 100;
+        right: 0;
+        border-radius: 0 4px 0 0;
+        transform: scale(0);
+        animation: check-mark-pop-in 100ms ease-in-out;
+        animation-fill-mode: forwards;
+
+        .check-mark-icon {
+          margin-top: 15px;
+        }
+      }
+  }
+
+  &:hover {
+    .trade-selector-item {
+      transform: scale(1.1);
+      box-shadow: 4px 1px 5px 2px rgba(0,0,0,.1);
+      background: #FFF9E2;
+    }
+    h2 {
+      transform: scale(1.1);
+    }
+  }
+  &:active {
+    transform: scale(.97);
+  }
+}
+
+.slick-list {
+  width: 1000px;
+}
+
+@keyframes check-mark-pop-in {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}

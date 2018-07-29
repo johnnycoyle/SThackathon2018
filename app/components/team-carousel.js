@@ -16,6 +16,10 @@ export default class TeamCarousel extends React.Component {
     this.slider;
   }
 
+  handleClick = () => {
+    this.props.transitionToBusinessUnitsSlide();
+  }
+
   renderImageUploadSlider = () => {
     const settings = {
         autoplay: false,
@@ -74,23 +78,27 @@ export default class TeamCarousel extends React.Component {
     };
 
     return(
-      this.props.active ? 
-      ( <div className="team-carousel-container">
+      <div className="team-carousel-container">
           <Slider ref={slider => (this.slider = slider)} {...settings}>
             <div className="team-text-container">
-              <div className="yellow-decorator-block"/>
-              <h3 className="team-text">Your technicians and office staff are the cornerstones of your ServiceTitan account.</h3>
-              <div className="employee-count-container">
-                <h3>I have</h3><input maxLength={3} type="text"/><h3>employees</h3>
-                <button className="done-button" onClick={this.goToNextSlide}>Done</button>
-              </div>
+              { this.props.active && (
+                <div>
+                  <div className="yellow-decorator-block"/>
+                  <h3 className="team-text">Your technicians and office staff are the <br/> cornerstones of your ServiceTitan account.</h3>
+                  <div className="employee-count-container">
+                    <h3>I have</h3><input maxLength={3} type="text"/><h3>employees</h3>
+                    <button className="done-button" onClick={this.goToNextSlide}>Done</button>
+                  </div>
+                </div>
+                )
+              }
             </div>
             <div className="add-employees-container">
               <EmployeeFormInput index={1}/>
-              <button className="done-button-employees" onClick={this.goToNextSlide}>I'm done</button>
+              <button className="done-button-employees" onClick={this.handleClick}>I'm done</button>
             </div>
           </Slider>
-        </div>) : null
+        </div>
     )
   }
 }

@@ -107,7 +107,6 @@ export default class HorizontalCarousel extends React.Component {
   }
 
   handleClick = () => {
-    alert('clikkkk');
     this.props.transitionToTeamSlide();
   }
 

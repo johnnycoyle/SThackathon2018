@@ -1,0 +1,111 @@
+.bu-carousel-container {
+  position: absolute;
+  width: 90%;
+  z-index: 1000;
+  z-index: 100;
+  width: 55%;
+  overflow: visible;
+  transform: translateY(-15%);
+  left: 15%;
+
+  h3 {
+    color: #FFFFFF;	
+    position: absolute;
+    font-size: 48px;	
+    font-weight: 800;
+    animation: bu-text-fade-in 8s ease-in-out;
+    animation-fill-mode: forwards;
+    opacity: 0;
+  }
+
+  .slide {
+    position: absolute;
+    width: fit-content;
+    z-index: 100;
+  }
+}
+
+@keyframes bu-text-fade-in {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(5%);
+  }
+}
+
+.bu-text-container {
+
+  h4 {
+    font-size: 48px;
+  }
+  .what-trades-container {
+    opacity: 0;
+    animation: what-trades-container-fade-in 1s ease-in-out;
+    animation-delay: 7.75s;
+    animation-fill-mode:forwards;
+    font-size: 48px;
+    transform: translateX(5%);
+    width: 120%;
+    position: absolute;
+    display: inline-block;
+  }
+}
+
+@keyframes what-trades-container-fade-in{
+  0% {
+    opacity: 0;
+    transform: translateX(5%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes button-fade-in{
+  0% {
+    opacity: 0;
+    transform: translateX(5%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+.trade-selector-next-button {
+  outline: none;
+  background: none;
+  width: 50px;
+  height: 50px;
+  border: 1px solid white;
+  border-radius: 25px;
+  position: absolute;
+  left: 900px;
+  top: 170px;
+  margin-left: 50px;
+  display: inline-block;
+  vertical-align: middle;
+  animation: what-trades-container-fade-in 1s ease-in-out;
+  animation-delay: 7.75s;
+  animation-fill-mode:forwards;
+  opacity: 0;
+  color: white;
+  transform: translateY(285%);
+}
+
+.slick-next {
+  display: none !important;
+}
+
+.slick-list {
+  width: 100%;
+}

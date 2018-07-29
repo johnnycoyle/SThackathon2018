@@ -2,8 +2,10 @@
     display: inline-block;
     margin-left: 10%;
     width: 60%;
-    height: 350px;
+    height: 300px;
+    margin-top: 2%;
     overflow-y: scroll;
+    position: relative;
 
    label {
       color: #FFFFFF;	font-family: "Nunito Sans";	font-size: 48px;	font-weight: 600;	line-height: 21px;
@@ -23,6 +25,7 @@
       font-weight: 100;
       letter-spacing: 1px;
       line-height: 36px;
+      transform: translateY(-8%);
       &::placeholder {
         color: rgba(255,255,255,0.6);
       }
@@ -38,6 +41,10 @@
   }
 }
 
+.employee-form-container {
+  height: 75px;
+}
+
 .done-button-employees {
   position: absolute;
 	height: 40px;	width: 201px;	border: 2px solid #FFFFFF;	border-radius: 25.5px; background: none;
@@ -50,8 +57,14 @@
   margin-left: 230px;
   outline: none;
 
-
   &:hover {
     transform: scale(1.1);
   }
+}
+
+.emplpoyee-input-text {
+  position: absolute;
+  font-size: 68px;
+  top: 0;
+  left: 0;
 }

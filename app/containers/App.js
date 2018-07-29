@@ -9,6 +9,7 @@ import WelcomePage from './../components/welcome-page';
 import NavigationButtons from './../components/lets-get-started-button';
 import HorizontalCarousel from './../components/horizontal-carousel';
 import TeamCarousel from './../components/team-carousel';
+import BusinessUnitCarousel from './../components/bu-carousel';
 
 class App extends Component {
 
@@ -94,7 +95,7 @@ class App extends Component {
               />
           )}}
           vertical={true}
-          speed={1000}
+          speed={500}
         >
           <WelcomePage 
             shouldDisplay={this.hasMounted || this.state.slideIndex === 0}
@@ -113,7 +114,11 @@ class App extends Component {
               transitionToBusinessUnitsSlide={this.transitionToBusinessUnitsSlide}
             />
           </Slide>
-          <Slide content="Slide 3" color="#BF2A00"/>
+          <Slide content="Slide 3" color="#C4DDDE">
+            <BusinessUnitCarousel
+              active={this.state.slideIndex === 3}
+            />
+          </Slide>
           <Slide content="Slide 3" color="#10864B"/>
           <Slide content="Slide 5" color="#FFBE00"/>
           <Slide content="Slide 3" color="#422799"/>
