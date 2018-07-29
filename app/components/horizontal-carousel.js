@@ -6,6 +6,7 @@ import LogoUpload from './logo-upload';
 import IntroConversation from './intro-conversation';
 import ConfirmLocations from './confirm-locations';
 import ConfirmLocationsSecondary from './confirm-locations-secondary';
+import ConfirmLogo from './confirm-logo';
 import { Transition, Button } from 'semantic-ui-react';
 
 export default class HorizontalCarousel extends React.Component {
@@ -101,9 +102,14 @@ export default class HorizontalCarousel extends React.Component {
     }
   }
 
-  goToNextSlide = () => (
+  goToNextSlide = () => {
     this.slider && this.slider.slickGoTo(this.state.slideIndex + 1)
-  )
+  }
+
+  handleClick = () => {
+    alert('clikkkk');
+    this.props.transitionToTeamSlide();
+  }
 
   render() {
 
@@ -116,24 +122,22 @@ export default class HorizontalCarousel extends React.Component {
         pauseOnHover: false,
         touchMove: false,
         swipe: false,
-      afterChange: () =>
+        afterChange: () =>
         this.setState(state => ({ updateCount: state.updateCount + 1 })),
-      beforeChange: (current, next) => this.setState({ slideIndex: next })
+        beforeChange: (current, next) => this.setState({ slideIndex: next })
     };
 
-    console.log(this.state.slideIndex);
-
-    return(
-      this.props.active ? 
-      ( <div className="hor-carousel-container">
+    return( 
+      <div className="hor-carousel-container">
           <Slider ref={slider => (this.slider = slider)} {...settings}>
             <div>
-              <IntroConversation onConfirm={this.goToNextSlide}/>
+              { this.props.active && <IntroConversation onConfirm={this.goToNextSlide}/> }
             </div>
             <ConfirmLocations onConfirm={this.goToNextSlide}/>
             <LogoUpload onConfirm={this.goToNextSlide}/>
+            <ConfirmLogo onConfirm={this.props.transitionToTeamSlide}/>
           </Slider>
-        </div>) : null
+        </div>
     )
   }
 }

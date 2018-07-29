@@ -10,7 +10,7 @@ export default class LogoUpload extends React.Component {
       <div className="logo-upload-container">
         <h3>We don't know what your logo looks like</h3>
         <h3 className="logo-explanation-text">Your logo is an important part of ServiceTitan and will be used on features like customer-facing invoices and forms.</h3>
-        <h3 onClick={this.props.onConfirm} className="upload-link">Upload Logo</h3>
+        <a onClick={this.props.onConfirm} className="upload-link">Upload Logo</a>
       </div>
     );
   }

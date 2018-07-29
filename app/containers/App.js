@@ -8,6 +8,7 @@ import Timeline from './../components/timeline';
 import WelcomePage from './../components/welcome-page';
 import NavigationButtons from './../components/lets-get-started-button';
 import HorizontalCarousel from './../components/horizontal-carousel';
+import TeamCarousel from './../components/team-carousel';
 
 class App extends Component {
 
@@ -15,12 +16,12 @@ class App extends Component {
     super(props);
     const steps = [
         'welcome',
-        'intro',
-        'company profile',
-        'business Units',
+        'company',
+        'team',
+        'business units',
         'employees',
         'technicians',
-        'final Steps'
+        'final steps'
     ]
 
     this.state = {
@@ -40,9 +41,6 @@ class App extends Component {
     this.hasMounted = true;
   }
 
-  triggerIntroductionCompletion = () => {
-    this.setState({ introductionComplete: true })
-  }
   setNextControls = (previous, next) => {
     this.nextButtonControls = next;
     this.previousButtonControls = previous;
@@ -50,6 +48,14 @@ class App extends Component {
 
   handleTimelineClick = (index) => {
     this.setState({ slideIndex: index});
+  }
+
+  transitionToTeamSlide = (e) => {
+    this.setState({ slideIndex: 2 });
+  }
+
+  transitionToBusinessUnitsSlide = (e) => {
+    this.setState({ slideIndex: 3});
   }
 
   render() {
@@ -75,6 +81,7 @@ class App extends Component {
               slideIndex 
             })
           }
+          dragging={false}
           renderCenterLeftControls={() => null}
           renderCenterRightControls={() => null}
           renderBottomRightControls={({ previousSlide, nextSlide }) => {
@@ -87,7 +94,7 @@ class App extends Component {
               />
           )}}
           vertical={true}
-          speed={750}
+          speed={1000}
         >
           <WelcomePage 
             shouldDisplay={this.hasMounted || this.state.slideIndex === 0}
@@ -97,11 +104,15 @@ class App extends Component {
           <Slide content="Slide 1" color="rgba(34, 112, 238, 1)">
             <HorizontalCarousel
               active={this.state.slideIndex === 1}
-              triggerIntroductionCompletion={this.triggerIntroductionCompletion}
-              introductionComplete={this.state.introductionComplete}
+              transitionToTeamSlide={this.transitionToTeamSlide}
             />
           </Slide>
-          <Slide content="Slide 3" color="#FFB2A0"/>
+          <Slide content="Slide 3" color="#FBBA58">
+            <TeamCarousel
+              active={this.state.slideIndex === 2}
+              transitionToBusinessUnitsSlide={this.transitionToBusinessUnitsSlide}
+            />
+          </Slide>
           <Slide content="Slide 3" color="#BF2A00"/>
           <Slide content="Slide 3" color="#10864B"/>
           <Slide content="Slide 5" color="#FFBE00"/>

@@ -7,11 +7,10 @@ html {
 body { 
   margin: 0;
   padding: 0;
-  background: #2270EE;
+  background: #2D2E31;
   min-width: 1000px;
   max-height: 100vh;
   overflow: hidden;
-  transform: translateY(8%);
 }
 
 .main-container {
@@ -21,7 +20,7 @@ body {
   overflow: hidden;
   justify-content: center;
   max-height: 100vh;
-  user-select: none;
+  outline: none;
 }
 
 .slider-frame {
@@ -40,7 +39,8 @@ body {
     right: 60px !important;
 }
 .slider-slide {
-  height: 1000px !important;
+  min-height: 100vh !important;
+  height: 100vh !important;
 }
 
 .logo {

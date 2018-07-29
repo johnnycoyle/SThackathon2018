@@ -1,0 +1,57 @@
+ .employee-input-container {
+    display: inline-block;
+    margin-left: 10%;
+    width: 60%;
+    height: 350px;
+    overflow-y: scroll;
+
+   label {
+      color: #FFFFFF;	font-family: "Nunito Sans";	font-size: 48px;	font-weight: 600;	line-height: 21px;
+      display: block;
+      display: inline-block;
+      margin-right: 20px;
+      margin-top: 20px;
+  }
+
+  input {
+      outline: none;
+      width: fit-content;
+      background: none;
+      border: none;
+      color: #FFFFFF;	
+      font-size: 18px;
+      font-weight: 100;
+      letter-spacing: 1px;
+      line-height: 36px;
+      &::placeholder {
+        color: rgba(255,255,255,0.6);
+      }
+  }
+
+  select {
+    display: inline-block;
+    outline: none;
+    width: fit-content;
+    background: none;
+    border: none;
+    color: #FFFFFF;	font-family: "Nunito Sans";	font-size: 28px;	font-weight: 600;	line-height: 21px;
+  }
+}
+
+.done-button-employees {
+  position: absolute;
+	height: 40px;	width: 201px;	border: 2px solid #FFFFFF;	border-radius: 25.5px; background: none;
+  color: white;
+  transform: scale(1);
+  transition: all 150ms ease-in-out;
+  display: block;
+  margin-top: 50px;
+  font-size: 18px;
+  margin-left: 230px;
+  outline: none;
+
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
