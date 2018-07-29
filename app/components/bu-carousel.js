@@ -60,7 +60,7 @@ export default class BusinessUnitCarousel extends React.Component {
         name: 'HVAC',
         icon: require('./../assets/HVAC_icon.png')
       }
-    ]
+    ];
 
     return(
       <div className="bu-carousel-container">
@@ -74,6 +74,7 @@ export default class BusinessUnitCarousel extends React.Component {
                       {
                         trades.map(trade => 
                           <TradeSelector
+                            key={Math.random()}
                             name={trade.name}
                             icon={trade.icon}
                           />
@@ -87,11 +88,33 @@ export default class BusinessUnitCarousel extends React.Component {
             </div>
             <div className="bu-text-container">
               <BusinessUnitsDivisionSelector
-                category="Plumbing"
+                categories={trades.slice(0,2)}
+                name="plumbing"
+                goToNextSlide={this.goToNextSlide}
               />
             </div>
-            <div className="bu-text-container">
-              <h3>What are your HVAC divisions? </h3>
+              <div className="bu-text-container">
+                <BusinessUnitsDivisionSelector
+                  categories={trades.slice(0,2)}
+                  name="electrical"
+                  goToNextSlide={this.goToNextSlide}
+                />
+            </div>
+            <div>
+              <div className="build-business-units">
+                <h5>Please wait while we build your Business Units</h5>
+                                <button 
+                  onClick={this.goToNextSlide}
+                  className="next-button-finished-container">
+                    <Icon name="arrow right" size="large" color="white"/>
+                </button>
+              </div>
+            </div>
+            <div>
+              <div className="finished-business-units-container">
+                <h5>Please wait while we build your Business Units</h5>
+
+              </div>
             </div>
           </Slider>
         </div>
