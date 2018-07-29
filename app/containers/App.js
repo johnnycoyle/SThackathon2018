@@ -82,6 +82,7 @@ class App extends Component {
               slideIndex 
             })
           }
+          easing={'easeBackOut'}
           dragging={false}
           renderCenterLeftControls={() => null}
           renderCenterRightControls={() => null}
@@ -95,7 +96,7 @@ class App extends Component {
               />
           )}}
           vertical={true}
-          speed={500}
+          speed={800}
         >
           <WelcomePage 
             shouldDisplay={this.hasMounted || this.state.slideIndex === 0}
@@ -114,7 +115,7 @@ class App extends Component {
               transitionToBusinessUnitsSlide={this.transitionToBusinessUnitsSlide}
             />
           </Slide>
-          <Slide content="Slide 3" color="#C4DDDE">
+          <Slide content="Slide 3" color="#b6dada">
             <BusinessUnitCarousel
               active={this.state.slideIndex === 3}
             />

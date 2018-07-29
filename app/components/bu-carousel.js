@@ -46,21 +46,29 @@ export default class BusinessUnitCarousel extends React.Component {
     const trades = [
       { 
         name: 'Plumbing',
-        icon: require('./../assets/plumbing_icon.png')
+        icon: require('./../assets/plumbing_illustration.png')
       },
       { 
         name: 'Electrical',
-        icon: require('./../assets/electrical_icon.png')
+        icon: require('./../assets/electrical_illustration.png')
       },
       { 
         name: 'Garage Door',
-        icon: require('./../assets/garage_icon.png')
+        icon: require('./../assets/garage_illustration.png')
       },
       { 
         name: 'HVAC',
-        icon: require('./../assets/HVAC_icon.png')
+        icon: require('./../assets/HVAC_illustration.png')
       }
     ];
+
+    const fieldsCleveland = [
+      'Cleveland', 'Cleveland-HVAC-Sales', 'Cleveland-Plumbing-Service', 'Cleveland-Plumbing-Sales'
+    ]
+
+    const fieldsGlenadle = [
+      'Glendale-HVAC-Service', 'Glendale-HVAC-Sales', 'Glendale-Plumbing-Service', 'Glendale-Plumbing-Sales'
+    ]
 
     return(
       <div className="bu-carousel-container">
@@ -96,7 +104,7 @@ export default class BusinessUnitCarousel extends React.Component {
               <div className="bu-text-container">
                 <BusinessUnitsDivisionSelector
                   categories={trades.slice(0,2)}
-                  name="electrical"
+                  name="HVAC"
                   goToNextSlide={this.goToNextSlide}
                 />
             </div>
@@ -108,16 +116,47 @@ export default class BusinessUnitCarousel extends React.Component {
                   className="next-button-finished-container">
                     <Icon name="arrow right" size="large" color="white"/>
                 </button>
+                { this.props.active && 
+                  <video className="bu-video" autoPlay muted>
+                      <source src={require('./../assets/logo_video.mp4')} type="video/mp4" />
+                  </video>
+                }
               </div>
             </div>
             <div>
               <div className="finished-business-units-container">
-                <h5>Please wait while we build your Business Units</h5>
-
+                <BuiltBusinessUnits header="Cleveland" fields={fieldsCleveland}/>
+                <BuiltBusinessUnits header="Glenadale" fields={fieldsGlenadle}/>
               </div>
+              <button className="btn-complete-bu">I'm done</button>
             </div>
           </Slider>
         </div>
     )
   }
 }
+
+const BuiltBusinessUnits = (props) => {
+  return (
+    <div className="built-unit-container">
+      <p className="bu-header">{props.header}</p>
+      { props.fields.map(field => <InputField value={field.value}/>) }
+    </div>
+  )
+}
+
+class InputField extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { value: this.props.value}
+  }
+  handleChange = (e) => {
+    const { value } = e.target;
+    this.setState({ value });
+  }
+  render() {
+    return(
+      <input type="text" className="bu-field" value={this.props.value} onChange={this.handleChange}/>
+    )
+  }
+} 

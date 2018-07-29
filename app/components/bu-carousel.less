@@ -116,6 +116,7 @@
 
   h5 {
     font-size: 34px;
+    transform: translateY(-10%) translateX(5%);
   }
 
   .next-button-finished-container {
@@ -129,11 +130,63 @@
     margin-left: 50px;
     display: inline-block;
     vertical-align: middle;
-    transform: translateX(650%) translateY(-110%);
+    transform: translateX(1600%) translateY(-110%);
     color: white;
   }
 }
 
-.finished-business-units-container {
+.bu-video {
+  margin: auto;
+  height: 100%;
+  width: 80%;
+  margin-top: -8%;
+  margin-left: 10%;
+}
 
+.finished-business-units-container {
+  display: flex;
+  width: 70%;
+}
+
+.slick-list {
+  height: 100vh;
+  user-select: none;
+}
+
+.built-unit-container {
+  display: inline-block;
+  margin-left: 40px;
+  height: 400px;
+  width: 500px;
+  z-index: 1000;
+  margin-top: 15%;
+
+  .bu-header {
+    font-size: 18px;
+    color: white;
+    margin-bottom: 15px;
+  }
+
+  .bu-field {
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #70A6A9;
+    border: none;
+    width: 100%;
+    outline: none;
+    display: block;
+    z-index: 1000;
+    margin-top: 25px;
+    &::placeholder {
+      color: #70A6A9;
+    }
+  }
+}
+
+.btn-complete-bu {
+  	height: 40px;	width: 180px;	border: 2px solid #FFFFFF;	border-radius: 25.5px;
+    background: none;
+    color: white;
+    transform: translateY(-160px) translateX(35px);
 }
