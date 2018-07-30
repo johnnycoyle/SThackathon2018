@@ -1,11 +1,12 @@
  .employee-input-container {
     display: inline-block;
-    margin-left: 10%;
     width: 60%;
     height: 300px;
-    margin-top: 2%;
+    margin-top: 7%;
     overflow-y: scroll;
     position: relative;
+    background: #EFBB6E;
+    left: 4%;
 
    label {
       color: #FFFFFF;	font-family: "Nunito Sans";	font-size: 48px;	font-weight: 600;	line-height: 21px;
@@ -35,9 +36,10 @@
     display: inline-block;
     outline: none;
     width: fit-content;
+
     background: none;
     border: none;
-    color: #FFFFFF;	font-family: "Nunito Sans";	font-size: 28px;	font-weight: 600;	line-height: 21px;
+    color: #FFFFFF;	font-family: "Nunito Sans";	font-size: 14px;	font-weight: 100;	line-height: 21px;
   }
 }
 
@@ -51,14 +53,15 @@
   color: white;
   transform: scale(1);
   transition: all 150ms ease-in-out;
-  display: block;
-  margin-top: 50px;
   font-size: 18px;
-  margin-left: 230px;
   outline: none;
+  z-index: 1000;
+  left: 130px;
+  margin-top: 30px;
 
   &:hover {
-    transform: scale(1.1);
+    background: white;
+    color: #FBBA58;
   }
 }
 

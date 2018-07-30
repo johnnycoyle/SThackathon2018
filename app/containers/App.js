@@ -20,8 +20,8 @@ class App extends Component {
         'company',
         'team',
         'business units',
-        'employees',
-        'technicians',
+        'job types',
+        'campaigns',
         'final steps'
     ]
 
@@ -59,12 +59,17 @@ class App extends Component {
     this.setState({ slideIndex: 3});
   }
 
+  goBackToStart = (e) => {
+    this.setState({ slideIndex: 0});
+  }
+
+
   render() {
 
     const { slideIndex } = this.state;
 
     return (
-      <div className="main-container">
+      <div className="main-parent-container">
         { 
           slideIndex !== 0 &&
             <img className="logo" src={require("./../assets/st_full_logo_white.png")}/>
@@ -82,7 +87,7 @@ class App extends Component {
               slideIndex 
             })
           }
-          easing={'easeBackOut'}
+          easing={'easeSinInOut'}
           dragging={false}
           renderCenterLeftControls={() => null}
           renderCenterRightControls={() => null}
@@ -90,13 +95,13 @@ class App extends Component {
             this.setNextControls(previousSlide, nextSlide);
             return (
               <NavigationButtons 
-                text={ this.state.slideIndex === 0 ? 'Let\'s get started' : null}
+                text={ this.state.slideIndex === 0 ? 'LET\'S GET STARTED' : null}
                 showPrevious={ this.state.slideIndex > 0}
                 onClick={{previousSlide, nextSlide}}
               />
           )}}
           vertical={true}
-          speed={800}
+          speed={1000}
         >
           <WelcomePage 
             shouldDisplay={this.hasMounted || this.state.slideIndex === 0}
@@ -109,7 +114,7 @@ class App extends Component {
               transitionToTeamSlide={this.transitionToTeamSlide}
             />
           </Slide>
-          <Slide content="Slide 3" color="#FBBA58">
+          <Slide content="Slide 3" color="#EFBB6E">
             <TeamCarousel
               active={this.state.slideIndex === 2}
               transitionToBusinessUnitsSlide={this.transitionToBusinessUnitsSlide}
@@ -118,10 +123,11 @@ class App extends Component {
           <Slide content="Slide 3" color="#b6dada">
             <BusinessUnitCarousel
               active={this.state.slideIndex === 3}
+              goBackToStart={this.goBackToStart}
             />
           </Slide>
           <Slide content="Slide 3" color="#10864B"/>
-          <Slide content="Slide 5" color="#FFBE00"/>
+          <Slide content="Slide 5" color="#08BFDF"/>
           <Slide content="Slide 3" color="#422799"/>
           <Slide content="Slide 3"/>
         </Carousel>

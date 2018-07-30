@@ -22,12 +22,8 @@ export default class WelcomePage extends React.Component {
           <div className="dark-layover"/>
           <div className="welcome-text-container">
             <h1>Welcome to ServiceTitan</h1>
-          </div>
-          <div className="play-button-container">
-            <div className="play-button-echo-A"/>
-            <div className="play-button-echo-B"/>
-            <div className="play-button">
-              <Icon className="play-button-icon" name="play" size="large" color="blue"/>
+            <div className="play-button-parent"> 
+              <PlayButton/>
             </div>
           </div>
           <div className="video-blue-overlay"/>
@@ -35,7 +31,7 @@ export default class WelcomePage extends React.Component {
             <div className="video-mask"/>
             <video id="background-video" autoPlay loop muted>
               <source src={require('./../assets/home_introduction_video.mp4')} type="video/mp4" />
-          </video>
+            </video>
           </div>
 
         </div>
@@ -43,3 +39,11 @@ export default class WelcomePage extends React.Component {
     );
   }
 }
+
+export const PlayButton = () => (
+    <div className="play-button-container">
+    <div className="play-button">
+      <Icon className="play-button-icon" name="play" size="large" color="blue"/>
+    </div>
+  </div>
+)

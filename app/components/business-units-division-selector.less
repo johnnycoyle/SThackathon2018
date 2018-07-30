@@ -1,12 +1,16 @@
 .divisions-container {
   width: 100%;
   height: 500px;
+  overflow: visible;
+  margin-top: 37px;
 
   h5 {
     color: white;
     position: absolute;
     font-size: 38px;
     font-weight: 300;
+    margin-left: 240px;
+    margin-top: -65px; 
   }
 
   .divisions-selector-icon-container{
@@ -26,11 +30,14 @@
     }
   }
 }
+
+.slick-slide {
+  height: 60vh;
+}
 .slick-list {
   outline: none;
   background: none;
   border: none;
-  // user-select: none;
 }
 .division-category-icon {
   height: 116px;
@@ -48,10 +55,12 @@
     color: white;
     transform: scale(1);
     z-index: 100;
-    margin-left: 10px;
+    margin-right: 5px;
+    margin-left: 20px;
 
     &:hover {
-      transform: scale(1.05);
+      background: white;
+      color: #8DC8CC;
     }
 
     &:active {
@@ -70,19 +79,19 @@
   background: none;
   width: 50px;
   height: 50px;
-  border: 1px solid white;
+  border: 2px solid white;
   border-radius: 25px;
-  right: 0;
+  margin-left: 710px;
+  margin-top: 235px;
   color: white;
-  transform: scale(1) translateX(860%) translateY(280%);
   transition: all 150ms ease-in-out;
 
   &:hover {
-    transform: scale(1.1) translateX(860%) translateY(280%);
     background: white;
     color: #70A6A9;
   }
-  &:hover {
-    transform: scale(.97) translateX(880%) translateY(280%)
+
+  .icon {
+    margin: auto;
   }
 }

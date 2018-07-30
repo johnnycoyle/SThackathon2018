@@ -34,7 +34,8 @@ export default class EmployeeFormInput extends React.Component {
               type="text" 
               placeholder="E-mail Address"
             />
-            <select placeholder="role">
+            <select style={{ fontSize: '21px' }} placeholder="role">
+              <option value="" disabled selected>Role</option>
               <option value="Role">Admin</option>
               <option value="Role">Tech</option>
               <option value="Role">CSR</option>

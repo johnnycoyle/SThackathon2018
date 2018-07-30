@@ -18,7 +18,7 @@ export default class TradeSelector extends React.Component {
     return(
       <div className="trade-selector-item-container"onClick={this.handleClick}>
         <div className="trade-selector-item"
-          style={ this.state.selected ? { boxShadow: '4px 1px 5px 2px rgba(0,0,0,.1)'} : null}
+          style={ this.state.selected ? { boxShadow: '0 14px 28px 0 rgba(0,0,0,0.23)'} : null}
         >
           { this.state.selected && 
             <div className="trade-selector-corner-check-mark">

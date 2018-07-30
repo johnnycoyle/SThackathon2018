@@ -1,37 +1,37 @@
 .intro-conversation-container {
-  position: absolute;
-  width: 65%;
-  left: 5%;
-  height: 100%;
-  margin: auto;
-  // user-select: none;
+  height: 60vh;
+  width: 100%;
+  transform: translateX(5%);
   z-index: 100;
   overflow: visible;
-
+  display: flex;
+  flex: 1;
+  align-items: center;
+  
   h3 {
-    	color: #FFFFFF;	
-      font-family: "Nunito Sans";	
-      font-size: 32px;	
-      font-weight: 800;	
+    margin: auto;
+    color: #FFFFFF;	
+    font-family: "Nunito Sans";	
+    font-size: 32px;	
+    font-weight: 800;
+    transform: translateY(-100%);
   }
 }
 
-
+ 
 .slide {
-  z-index: 1000;
-  position: absolute;
-  top: 0;
-  left: 0;
-  overflow: visible;
+  margin: auto;
 }
 
-@delay: 2s;
+@delay: .5s;
 @text1duration: 5s;
 @outAnimationDuration: 500ms;
 @inAnimationDuration: 750ms;
 
 .text1:extend(.slide) {
   opacity: 0;
+  position: absolute;
+  top: 35%;
   animation: text-animation @text1duration ease-in-out;
   animation-delay: @delay;
   animation-fill-mode: forwards;
@@ -40,24 +40,26 @@
 @keyframes text-animation {
   0% {
     opacity: 0;
-    transform: translateY(-5%);
   }
   15% {
     opacity: 1;
-    transform: translateY(0%);
   }
   85% {
     opacity: 1;
-    transform: translateY(0%);
   }
   100% {
     opacity: 0;
-    transform: translateY(7%);
   }
+}
+
+
+.slick-dots {
+  top: 60%;
 }
 
 .text2:extend(.slide) {
   opacity: 0;
+  position: absolute;
   animation: text-animation @text1duration ease-in-out;
   animation-delay: @delay + @text1duration;
   animation-fill-mode: forwards;
@@ -65,16 +67,17 @@
 
 .text3:extend(.slide) {
   opacity: 0;
+  position: absolute;
   animation: text-animation @text1duration ease-in-out;
   animation-delay: @delay + @text1duration + @text1duration;
   animation-fill-mode: forwards;
 }
 
 .confirm-locations-container {
-  position: absolute;
   width: 100%;
   height: 100%;
   margin: auto;
+  margin-top: 100px;
   opacity: 0;
   animation: confirm-locations-animation 500ms ease-in-out;
   animation-delay: 17s;
@@ -99,10 +102,13 @@
     transform: translateX(0%);
   }
 }
-.looks-good-button{
+
+.button-template {
+  
+}
+
+.confirm-first-location-button{
   position: absolute;
-  z-index: 1000;
-  top: 330px;
   height: 40px;	width: 180px;	border: 2px solid #FFFFFF;	border-radius: 25.5px;
   background: none;
   color: white;
@@ -110,6 +116,18 @@
   animation-delay: 17.5s;
   animation-fill-mode: forwards;
   opacity: 0;
+  margin-top: 200px;
+  transition: all 150ms ease-in-out;
+  z-index: 100;
+  transform: scale(1);
+
+  &:hover {
+    background: white;
+    color: #2270EE;
+  }
+  &:active {
+    transform: scale(.97);
+  }
 }
 
 @keyframes looks-good-button-fade-in {
@@ -120,5 +138,23 @@
   to {
     opacity: 1;
     transform: translateX(0%);
+  }
+}
+
+.confirm-button-styles {
+  transition: all 150ms ease-in-out;
+  z-index: 100;
+  transform: scale(1);
+  position: absolute;
+  height: 40px;	width: 180px;	border: 2px solid #FFFFFF;	border-radius: 25.5px;
+  background: none;
+  color: white;
+
+  &:hover {
+    background: white;
+    color: #2270EE;
+  }
+  &:active {
+    transform: scale(.97);
   }
 }

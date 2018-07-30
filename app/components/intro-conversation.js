@@ -17,9 +17,9 @@ export default class IntroConversation extends React.Component {
 
     return(
       <div className="intro-conversation-container">
-        <div className="text1"><h3>Let's get to know each other a bit.</h3></div>
-        <div className="text2"><h3>Over the next few minutes, <br/> we'll be putting together your account basics.</h3></div>
-        <div className="text3"><h3>Let's begin! <br/>First, we need to confirm a few things:</h3></div>
+        <h3 className="text1">Let's get to know each other a bit.</h3>
+        <h3 className="text2">Over the next few minutes, <br/> we'll be putting together your account basics.</h3>
+        <h3 className="text3">Let's begin! <br/>First, we need to confirm a few things:</h3>
         <div className="confirm-locations-container">
           <h3>Does this look right?</h3>
           {
@@ -28,7 +28,7 @@ export default class IntroConversation extends React.Component {
             )
           }
         </div>
-        <button className="looks-good-button" onClick={this.props.onConfirm}>Looks good</button>
+        <button className="confirm-first-location-button" onClick={this.props.onConfirm}>Looks good</button>
       </div>
     );
   }

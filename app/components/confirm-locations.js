@@ -22,7 +22,7 @@ export default class ConfirmLocations extends React.Component {
                 <FormInput key={`formInput${i}`} label={data.label} value={data.value}/>
               )
             }
-            <button className="looks-good-button" onClick={this.props.onConfirm}>Looks good</button>
+            <button className="secondary-confirm-button" onClick={this.props.onConfirm}>Looks good</button>
         </div>
     )
   }

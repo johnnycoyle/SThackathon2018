@@ -1,6 +1,7 @@
 .confirm-logo-container {
   position: absolute;
-  margin-left: 2%;
+  margin-left: 5%;
+  top: 23%;
 
   h3 {
     	color: #FFFFFF;	
@@ -30,20 +31,36 @@
   }
 }
 
-.logo-button {
-  cursor: pointer !important;
-  margin-left: 20px;
-  color: white;
-  outline: none;
-  background: none;
-	height: 40px;	width: 201px;	border: 2px solid #FFFFFF;	border-radius: 25.5px;
-  transition: all 150ms ease-in-out;
-  z-index: 1500;
+.confirm-button-styles {
+  z-index: 100;
   transform: scale(1);
+  position: absolute;
+  height: 40px;	width: 180px;	border: 2px solid #FFFFFF;	border-radius: 25.5px;
+  background: none;
+  color: white;
+  transition: all 150ms ease-in-out;
 
   &:hover {
-    color: #FFE278; 
-    border: 2px solid #FFE278;	 
-    transform: scale(1.1);
+    background: white;
+    color: #2270EE;
+  }
+  &:active {
+    transform: scale(.97);
+  }
+}
+
+.logo-button:extend(.confirm-button-styles) {
+  position: relative;
+  cursor: pointer !important;
+  margin-left: 20px;
+  z-index: 1500;
+  transition: all 150ms ease-in-out;
+
+  &:hover {
+    background: white;
+    color: #2270EE;
+  }
+  &:active {
+    transform: scale(.97);
   }
 }
