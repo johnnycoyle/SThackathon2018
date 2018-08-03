@@ -13,33 +13,35 @@ import BusinessUnitCarousel from './../components/bu-carousel';
 
 class App extends Component {
 
-    state = {
-      slideIndex: 0,
-      steps: [
-        'welcome',
-        'company',
-        'team',
-        'business units',
-        'job types',
-        'campaigns',
-        'final steps'
-      ]
-    }
+  state = {
+    slideIndex: 0,
+    steps: [
+      'welcome',
+      'company',
+      'team',
+      'business units',
+      'job types',
+      'campaigns',
+      'final steps'
+    ]
+  }
+
+  totalActiveSteps = 4;
 
   setNextControls = (previous, next) => {
     this.nextButtonControls = next;
     this.previousButtonControls = previous;
   }
 
-  handleTimelineClick = (index) => {
-    this.setState({ slideIndex: index});
+  handleTimelineClick = index => {
+    this.setState({ slideIndex: index });
   }
 
   goToNextSlide = () => {
     const { slideIndex } = this.state;
-    slideIndex === 3
+    slideIndex === this.totalActiveSteps - 1
       ? this.setState({ slideIndex: 0 }) 
-      : this.setState({ slideIndex: this.state.slideIndex + 1});
+      : this.setState({ slideIndex: slideIndex + 1});
   }
 
   render() {
@@ -109,8 +111,5 @@ class App extends Component {
     );
   }
 }
-
-
-
 
 export default App;
