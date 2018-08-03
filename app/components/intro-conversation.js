@@ -1,6 +1,6 @@
 import React from 'react';
 import './intro-conversation.less';
-import FormInput from './FormInput';
+import FormInput from './form-input';
 
 export default class IntroConversation extends React.Component {
 

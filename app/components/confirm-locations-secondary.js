@@ -1,5 +1,5 @@
 import React from 'react';
-import FormInput from './FormInput';
+import FormInput from './form-input';
 import './confirm-locations.less';
 
 export default class ConfirmLocationsSecondary extends React.Component {

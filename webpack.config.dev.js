@@ -5,14 +5,12 @@ module.exports = {
   devtool: 'inline-source-map',
   entry: [
     'webpack-dev-server/client?http://localhost:3000', 
-    // WebpackDevServer host and port
-    'webpack/hot/only-dev-server', 
-    // "only" prevents reload on syntax errors
-    './app/devpanel/index.js',
+    'webpack/hot/only-dev-server',
+    './index.js'
   ],
   output: {
-    path: path.join(__dirname, 'dev'),
-    filename: 'devpanel.bundle.js',
+    path: path.join(__dirname, 'build'),
+    filename: 'bundle.js',
     publicPath: `http://localhost:3000/`
   },
   plugins: [

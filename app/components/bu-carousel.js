@@ -80,8 +80,6 @@ export default class BusinessUnitCarousel extends React.Component {
 
     this.state.slideIndex === 3 && this.startTimer(13000);
 
-
-
     return(
       <div className="bu-carousel-container">
           <Slider ref={slider => (this.slider = slider)} {...settings}>
@@ -106,7 +104,7 @@ export default class BusinessUnitCarousel extends React.Component {
                         )
                       }
                     </div>
-                    <button onClick={this.goToNextSlide}className="trade-selector-next-button"><Icon name="arrow right" size="large" color="white"/></button>
+                    <button onClick={this.goToNextSlide} className="trade-selector-next-button"><Icon name="arrow right" size="large" color="white"/></button>
                   </div>
                 )
               }
@@ -141,6 +139,7 @@ export default class BusinessUnitCarousel extends React.Component {
                 <BuiltBusinessUnits header="Glenadale" fields={fieldsGlenadle}/>
                 <button className="btn-complete-bu" onClick={this.goBackToStart}> I'm done</button>
               </div>
+
             </div>
           </Slider>
         </div>

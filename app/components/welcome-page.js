@@ -1,7 +1,7 @@
 import React from 'react';
 import './welcome-page.less';
 
-import { Transition, Icon } from 'semantic-ui-react'
+import { Icon } from 'semantic-ui-react'
 
 export default class WelcomePage extends React.Component {
 

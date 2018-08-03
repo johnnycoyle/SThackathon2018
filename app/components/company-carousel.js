@@ -1,7 +1,7 @@
 import React from 'react';
 import Slider from 'react-slick';
-import './horizontal-carousel.less';
-import FormInput from './FormInput';
+import './company-carousel.less';
+import FormInput from './form-input';
 import LogoUpload from './logo-upload';
 import IntroConversation from './intro-conversation';
 import ConfirmLocations from './confirm-locations';
@@ -9,25 +9,16 @@ import ConfirmLocationsSecondary from './confirm-locations-secondary';
 import ConfirmLogo from './confirm-logo';
 import { Transition, Button } from 'semantic-ui-react';
 
-export default class HorizontalCarousel extends React.Component {
+export default class CompanyCarousel extends React.Component {
 
   constructor(props){
     super(props);
-
-    this.state = {
-      slideIndex: 0,
-      updateCount: 0
-    }
-
+    this.state = { slideIndex: 0, updateCount: 0 }
     this.slider;
   }
 
   goToNextSlide = () => {
     this.slider && this.slider.slickGoTo(this.state.slideIndex + 1)
-  }
-
-  handleClick = () => {
-    this.props.transitionToTeamSlide();
   }
 
   render() {
@@ -41,9 +32,7 @@ export default class HorizontalCarousel extends React.Component {
         pauseOnHover: false,
         touchMove: false,
         swipe: false,
-        appendDots: dots => <ul className="company-dots">{dots}</ul>,
-        afterChange: () =>
-        this.setState(state => ({ updateCount: state.updateCount + 1 })),
+        afterChange: () => this.setState(state => ({ updateCount: state.updateCount + 1 })),
         beforeChange: (current, next) => this.setState({ slideIndex: next })
     };
 
@@ -55,7 +44,7 @@ export default class HorizontalCarousel extends React.Component {
             </div>
             <ConfirmLocations onConfirm={this.goToNextSlide}/>
             <LogoUpload onConfirm={this.goToNextSlide}/>
-            <ConfirmLogo onConfirm={this.props.transitionToTeamSlide}/>
+            <ConfirmLogo onConfirm={this.props.goToNextSlide}/>
           </Slider>
         </div>
     )
